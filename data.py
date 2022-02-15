@@ -58,8 +58,6 @@ def loaders(dataset, path, batch_size, num_workers, transform_name, use_test=Fal
         test_set.train = False
         test_set.data = test_set.data[-5000:]
         test_set.targets = test_set.targets[-5000:]
-        delattr(test_set, 'data')
-        delattr(test_set, 'targets')
 
     return {
                'train': torch.utils.data.DataLoader(
